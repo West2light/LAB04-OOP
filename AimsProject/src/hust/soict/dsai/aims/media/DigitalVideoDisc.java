@@ -1,30 +1,30 @@
 
 package hust.soict.dsai.aims.media;
 
-public class DigitalVideoDisplay extends Disc implements Playable {
+public class DigitalVideoDisc extends Disc implements Playable {
     private String addDate;
     private static int nbDigitalVideoDiscs = 0;
 
     // Constructor với title
-    public DigitalVideoDisplay(String title) {
+    public DigitalVideoDisc(String title) {
         super(++nbDigitalVideoDiscs, title);
         setAddDate();
     }
 
     // Constructor với title, category, cost
-    public DigitalVideoDisplay(String title, String category, float cost) {
+    public DigitalVideoDisc(String title, String category, float cost) {
         super(++nbDigitalVideoDiscs, title, category, cost, null, 0);
         setAddDate();
     }
 
     // Constructor với director, category, title, cost
-    public DigitalVideoDisplay(String director, String category, String title, float cost) {
+    public DigitalVideoDisc(String director, String category, String title, float cost) {
         super(++nbDigitalVideoDiscs, title, category, cost, director, 0);
         setAddDate();
     }
 
     // Constructor đầy đủ thông tin
-    public DigitalVideoDisplay(String title, String category, String director, int length, float cost) {
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         super(++nbDigitalVideoDiscs, title, category, cost, director, length);
         setAddDate();
     }
@@ -60,12 +60,12 @@ public class DigitalVideoDisplay extends Disc implements Playable {
 
     @Override
     public int compareTo(Media other) {
-        if (!(other instanceof DigitalVideoDisplay)) {
+        if (!(other instanceof DigitalVideoDisc)) {
             // Nếu không phải DVD, dùng cách so sánh mặc định
             return super.compareTo(other);
         }
         
-        DigitalVideoDisplay otherDVD = (DigitalVideoDisplay) other;
+        DigitalVideoDisc otherDVD = (DigitalVideoDisc) other;
         
         // So sánh chính theo title
         if (this.getTitle() != null && otherDVD.getTitle() != null) {
